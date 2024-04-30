@@ -32,21 +32,24 @@ class Changelog:
                     )
 
     def construct_markdown(self, new_version: Version) -> list[str]:
-        changelog_lines: list[str] = [f"# Version: {new_version}"]
+        changelog_lines: list[str] = [f"# Version: {new_version}\n\n"]
 
         if self.breaking_changes:
-            changelog_lines.append("## BREAKING CHANGES:")
+            changelog_lines.append("## BREAKING CHANGES:\n")
             for change in self.breaking_changes:
-                changelog_lines.append(f"    * {change}")
+                changelog_lines.append(f"    * {change}\n")
+            changelog_lines.append("\n")
 
         if self.features:
-            changelog_lines.append("## Features:")
+            changelog_lines.append("## Features:\n")
             for change in self.features:
-                changelog_lines.append(f"    * {change}")
+                changelog_lines.append(f"    * {change}\n")
+            changelog_lines.append("\n")
 
         if self.fixes:
-            changelog_lines.append("## Bugfixes:")
+            changelog_lines.append("## Bugfixes:\n")
             for change in self.fixes:
-                changelog_lines.append(f"    * {change}")
+                changelog_lines.append(f"    * {change}\n")
+            changelog_lines.append("\n")
 
         return changelog_lines

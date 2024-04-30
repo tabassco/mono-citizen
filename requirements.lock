@@ -9,7 +9,7 @@
 
 -e file:.
 click==8.1.7
-    # via mono-citizen
+    # via rich-click
 markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
@@ -18,3 +18,8 @@ pygments==2.17.2
     # via rich
 rich==13.7.1
     # via mono-citizen
+    # via rich-click
+rich-click==1.8.0
+    # via mono-citizen
+typing-extensions==4.11.0
+    # via rich-click
