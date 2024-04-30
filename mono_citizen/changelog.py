@@ -10,7 +10,7 @@ class Changelog:
         self.features: list[str] = []
         self.fixes: list[str] = []
 
-    def load_from_commits(self, last_version_hash: str) -> None:
+    def load_from_commits(self, last_version_hash: str | None) -> None:
         commits = get_commits(self.path)
 
         for commit in commits:
